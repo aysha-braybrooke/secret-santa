@@ -3,6 +3,7 @@ import { WelcomeScreen } from "./components/WelcomeScreen";
 import { ParticipantInput } from "./components/ParticipantInput";
 import { AssignmentDisplay } from "./components/AssignmentDisplay";
 
+
 export default function App() {
   // Tableau des participants
   const [participants, setParticipants] = useState([]);
