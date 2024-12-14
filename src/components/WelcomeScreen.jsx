@@ -1,16 +1,12 @@
-// Ecran d'accueil de l'application
-// Ce composant prend en props une fonction pour démarrer l'application : onStart
-
 export function WelcomeScreen({ onStart }) {
   return (
-    <div className="text-center space-y-6">
-      <h1 className="text-4xl font-bold text-primary">Secret Santa</h1>
-      <p className="text-lg">
-        Bienvenue dans l'application Secret Santa ! Organisez facilement votre
-        échange de cadeaux entre amis ou collègues.
-      </p>
-      <button onClick={onStart} className="button text-lg px-8 py-3">
-        Commencer
+    <div className="relative w-full h-screen flex flex-col items-center justify-end">
+      <img src="./assets/fond.png" className="absolute z-0 scale-150 w-full h-full object-cover" alt="background"></img>
+      <img src="./assets/sapin.png" className="absolute scale-200" alt="sapin"></img>
+      <img src="./assets/lutin_neutre.png" className="absolute scale-150 -bottom-20" alt="lutin"></img>
+      
+      <button onClick={onStart} className="relative mb-10">
+        <img src="./assets/btn_commence.png" alt="Commencer"></img>
       </button>
     </div>
   );
