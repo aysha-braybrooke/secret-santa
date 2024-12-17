@@ -7,8 +7,9 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-            "orelega": ['Orelega One', 'serif']
+            'orelegaOne': ['Orelega One', 'serif']
           },
+          
       },
     },
     plugins: [],

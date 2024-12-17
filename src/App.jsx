@@ -42,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto font-orelega">
+    <div style={{ fontFamily: "'Orelega One', sans-serif" }}>
       {/* Écran d'accueil */}
       {currentScreen === "welcome" && (
         <WelcomeScreen onStart={() => setCurrentScreen("accueil")} />
@@ -56,17 +56,17 @@ export default function App() {
       {/* Écran d'ajout des participants */}
       {currentScreen === "input" && (
         <>
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Ajoutez les participants
-          </h2>
+          
           <ParticipantInput
             onAddParticipant={addParticipant}
             participants={participants}
             onRemoveParticipant={removeParticipant}
           />
+
+          {/* SUIVANT ---------------------------- */}
           <div className="mt-6">
-            <button className="button w-full" onClick={distributeGifts}>
-              Distribuer les cadeaux
+            <button className="button w-full absolute bottom-10 left-45" onClick={distributeGifts}>
+              <img src="./assets/btn_suivant.png"></img>
             </button>
           </div>
         </>
@@ -75,15 +75,18 @@ export default function App() {
       {/* Écran d'affichage des attributions */}
       {currentScreen === "assignments" && (
         <>
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Attributions des cadeaux
+          <h2 className="relative text-4xl mb-6 mt-4 text-center ">
+            Résultats
           </h2>
           <AssignmentDisplay assignments={assignments} />
           <div className="mt-6">
             <button className="button w-full" onClick={resetApp}>
-              Recommencer
+            <img src="./assets/btn_recommencer.png" className="absolute scale-80 bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"></img>
             </button>
           </div>
+
+          <img src="./assets/sapin.png" className="absolute -bottom-30  -right-30 scale-80"></img>
+          <img src="./assets/gift_pile.png" className="absolute bottom-0" ></img>
         </>
       )}
     </div>
